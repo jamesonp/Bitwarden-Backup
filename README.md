@@ -28,7 +28,7 @@ I set this up to run nightly with a cron job:
 
     0 0 * * * /location/of/script/./filename.sh > /backups/scripts/logs/log.txt    
 
-To un-encrypt your backup you'd just do something similar to:
+To decrypt your backup you'd just do something similar to:
 
     openssl rsautl -decrypt -inkey /path/to/private/key.pem -in /path/to/encrypted/backup/pass_04_27_2018.tar.gz.enc -out pass.bin #decrypt your key
     openssl enc -aes-256-cbc -d -pass file:/path/to/decrypted/pass.bin -in /path/to/encrypted/bitwarden_04_27_2018.tar.gz.enc -out bitwarden.tar.gz #decrypt your backup
